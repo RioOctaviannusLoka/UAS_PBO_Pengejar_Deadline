@@ -13,7 +13,13 @@ public class taskController implements Initializable {
     private Button finishedPlans_btn;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_endDate;
+    private TableColumn<?, ?> finishedPlans_col_dateCreated;
+
+    @FXML
+    private TableColumn<?, ?> finishedPlans_col_description;
+
+    @FXML
+    private TableColumn<?, ?> finishedPlans_col_dueDate;
 
     @FXML
     private TableColumn<?, ?> finishedPlans_col_plan;
@@ -22,28 +28,25 @@ public class taskController implements Initializable {
     private TableColumn<?, ?> finishedPlans_col_planID;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_startDate;
-
-    @FXML
     private TableColumn<?, ?> finishedPlans_col_status;
 
     @FXML
     private TableColumn<?, ?> finishedPlans_col_type;
 
     @FXML
+    private Button finishedPlans_filterBtn;
+
+    @FXML
     private AnchorPane finishedPlans_form;
 
     @FXML
-    private TextField finishedPlans_planID;
+    private TextField finishedPlans_search;
 
     @FXML
     private ComboBox<?> finishedPlans_status;
 
     @FXML
     private TableView<?> finishedPlans_tableView;
-
-    @FXML
-    private Button finishedPlans_updateBtn;
 
     @FXML
     private Label home_FP;
@@ -79,13 +82,13 @@ public class taskController implements Initializable {
     private TableColumn<?, ?> myPlans_col_dateCreated;
 
     @FXML
-    private TableColumn<?, ?> myPlans_col_endDate;
+    private TableColumn<?, ?> myPlans_col_description;
+
+    @FXML
+    private TableColumn<?, ?> myPlans_col_dueDate;
 
     @FXML
     private TableColumn<?, ?> myPlans_col_plan;
-
-    @FXML
-    private TableColumn<?, ?> myPlans_col_startDate;
 
     @FXML
     private TableColumn<?, ?> myPlans_col_status;
@@ -97,13 +100,16 @@ public class taskController implements Initializable {
     private Button myPlans_deleteBtn;
 
     @FXML
+    private TextArea myPlans_description;
+
+    @FXML
     private AnchorPane myPlans_endDate;
 
     @FXML
     private AnchorPane myPlans_form;
 
     @FXML
-    private TextArea myPlans_plan;
+    private TextField myPlans_plan;
 
     @FXML
     private DatePicker myPlans_startDate;

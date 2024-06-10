@@ -83,7 +83,7 @@
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                             <children>
                                 <Separator layoutY="4.0" orientation="VERTICAL" prefHeight="544.0" prefWidth="0.0" />
-                                <AnchorPane fx:id="home_form" layoutX="162.0" layoutY="209.0" prefHeight="556.8" prefWidth="886.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <AnchorPane fx:id="home_form" layoutX="162.0" layoutY="209.0" prefHeight="556.8" prefWidth="886.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
                                         <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="858.0">
                                             <styleClass>
@@ -211,11 +211,11 @@
                                         </TableView>
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane fx:id="finishedPlans_form" layoutX="192.0" layoutY="102.0" prefHeight="556.8" prefWidth="886.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <AnchorPane fx:id="finishedPlans_form" layoutX="192.0" layoutY="102.0" prefHeight="556.8" prefWidth="886.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
                                         <AnchorPane layoutX="12.0" layoutY="8.8" prefHeight="537.0" prefWidth="863.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="9.0">
                                             <children>
-                                                <TableView fx:id="finishedPlans_tableView" layoutX="9.0" layoutY="74.0" prefHeight="453.0" prefWidth="846.0">
+                                                <TableView fx:id="finishedPlans_tableView" layoutX="8.0" layoutY="66.0" prefHeight="453.0" prefWidth="846.0">
                                                     <columns>
                                                         <TableColumn fx:id="finishedPlans_col_planID" prefWidth="68.79998970031738" text="Plan ID" />
                                                         <TableColumn fx:id="finishedPlans_col_plan" prefWidth="135.99999237060547" text="Plan" />
@@ -226,13 +226,15 @@
                                                         <TableColumn fx:id="finishedPlans_col_status" prefWidth="110.4000244140625" text="Status" />
                                                     </columns>
                                                 </TableView>
-                                                <Label layoutX="14.0" layoutY="27.0" text="Status:">
+                                                <TextField fx:id="finishedPlans_search" layoutX="14.0" layoutY="21.0" prefHeight="30.0" prefWidth="273.0" promptText="Search" styleClass="search" />
+                                                <FontAwesomeIconView glyphName="SEARCH" layoutX="20.0" layoutY="42.0" size="1.5em" />
+                                                <Label layoutX="348.0" layoutY="23.0" text="Status:">
                                                     <font>
                                                         <Font size="15.0" />
                                                     </font>
                                                 </Label>
-                                                <ComboBox fx:id="finishedPlans_status" layoutX="70.0" layoutY="25.0" prefHeight="28.0" prefWidth="150.0" promptText="Choose..." styleClass="textfield" />
-                                                <Button fx:id="finishedPlans_filterBtn" layoutX="233.0" layoutY="22.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="77.0" styleClass="btn" text="Filter" />
+                                                <ComboBox fx:id="finishedPlans_status" layoutX="404.0" layoutY="21.0" prefHeight="28.0" prefWidth="150.0" promptText="Choose..." styleClass="textfield" />
+                                                <Button fx:id="finishedPlans_filterBtn" layoutX="567.0" layoutY="18.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="77.0" styleClass="btn" text="Filter" />
                                             </children>
                                             <styleClass>
                                                 <String fx:value="white-bg" />

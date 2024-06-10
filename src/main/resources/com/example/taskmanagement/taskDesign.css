@@ -68,7 +68,18 @@
     -fx-border-width: 1.5px;
     -fx-background-color: #f5f5f5;
 }
+.search{
+    -fx-background-color: #f5f5f5;
+    -fx-border-width: 1.2px;
+    -fx-border-radius: 6px;
+    -fx-border-color: #4CA1AF;
+    -fx-font-size: 13px;
+    -fx-padding: 0px 0px 0px 28px;
+}
 
+.search:focused{
+    -fx-background-color: #fff;
+}
 .card{
     -fx-background-color: linear-gradient(to bottom right, #2C3E50, #4CA1AF);
     -fx-background-radius: 20px;
