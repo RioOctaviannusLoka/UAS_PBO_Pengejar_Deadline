@@ -1,14 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.taskmanagement.taskController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" stylesheets="@taskDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <BorderPane layoutX="313.0" layoutY="156.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <top>
+                        <AnchorPane prefHeight="43.0" prefWidth="1100.0" styleClass="semi-top" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane prefHeight="26.0" prefWidth="1100.0" styleClass="top-form" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label fx:id="page_label" layoutX="14.0" layoutY="9.0" text="HOME" AnchorPane.topAnchor="9.0">
+                                            <font>
+                                                <Font name="Tahoma" size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <left>
+                        <AnchorPane prefHeight="555.0" prefWidth="213.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane layoutX="8.0" layoutY="5.0" prefHeight="539.0" prefWidth="199.0">
+                                    <styleClass>
+                                        <String fx:value="nav2" />
+                                        <String fx:value="shadow" />
+                                    </styleClass>
+                                    <children>
+                                        <Button fx:id="home_btn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="141.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="180.0" styleClass="nav-btn" text="Home" textFill="#4ca1af">
+                                            <graphic>
+                                                <FontAwesomeIconView fill="#2c3e50" glyphName="HOME" text="" />
+                                            </graphic></Button>
+                                        <Button fx:id="myPlans_btn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="188.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="180.0" styleClass="nav-btn" text="My Plans" textFill="#2c3e50">
+                                            <graphic>
+                                                <FontAwesomeIconView fill="#2c3e50" glyphName="LIST" />
+                                            </graphic></Button>
+                                        <Button fx:id="finishedPlans_btn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="236.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="180.0" styleClass="nav-btn" text="Finished Plans">
+                                            <graphic>
+                                                <FontAwesomeIconView fill="#2c3e50" glyphName="CHECK_SQUARE_ALT" />
+                                            </graphic></Button>
+                                        <Button fx:id="logout_btn" layoutX="14.0" layoutY="485.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="signout">
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="2em" styleClass="signout" text="" />
+                                            </graphic>
+                                        </Button>
+                                        <Label layoutX="64.0" layoutY="495.0" text="Sign Out">
+                                            <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <ImageView fitHeight="145.0" fitWidth="179.0" layoutX="11.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Image/logo.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </left>
+                    <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Separator layoutY="4.0" orientation="VERTICAL" prefHeight="544.0" prefWidth="0.0" />
+                                <AnchorPane fx:id="home_form" layoutX="162.0" layoutY="209.0" prefHeight="556.8" prefWidth="886.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="858.0">
+                                            <styleClass>
+                                                <String fx:value="card" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <ImageView fitHeight="201.0" fitWidth="314.0" layoutX="510.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Image/card.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="37.0" layoutY="41.0" text="Hi," textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Tahoma Bold" size="50.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="37.0" layoutY="116.0" text="Ready, to start your day with some task?" textFill="WHITE" />
+                                                <Label fx:id="home_username" layoutX="109.0" layoutY="42.0" prefHeight="63.0" prefWidth="366.0" text="Zion" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Tahoma Bold" size="50.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="14.0" layoutY="234.0" prefHeight="186.0" prefWidth="405.0">
+                                            <styleClass>
+                                                <String fx:value="card" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <Label layoutX="172.0" layoutY="151.0" text="Number of Active Plans" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Tahoma" size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="CLIPBOARD" layoutX="37.0" layoutY="137.0" size="8em" />
+                                                <Label fx:id="home_NAP" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" layoutX="250.0" layoutY="14.0" prefHeight="18.0" prefWidth="131.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Arial" size="20.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="466.0" layoutY="234.0" prefHeight="186.0" prefWidth="405.0">
+                                            <styleClass>
+                                                <String fx:value="card" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <Label layoutX="203.0" layoutY="151.0" text="Finished Plans" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Tahoma" size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="CHECK_SQUARE_ALT" layoutX="38.0" layoutY="137.0" size="8em" />
+                                                <Label fx:id="home_FP" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" layoutX="256.0" layoutY="14.0" prefHeight="18.0" prefWidth="131.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Arial" size="20.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="myPlans_form" layoutX="250.0" layoutY="166.0" prefHeight="556.8" prefWidth="886.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane fx:id="myPlans_endDate" layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="866.0">
+                                            <children>
+                                                <Label layoutX="8.0" layoutY="73.0" text="Description:">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextArea fx:id="myPlans_description" layoutX="95.0" layoutY="74.0" prefHeight="80.0" prefWidth="219.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <Label layoutX="350.0" layoutY="27.0" text="Date Created:">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <DatePicker fx:id="myPlans_startDate" layoutX="450.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <Label layoutX="373.0" layoutY="85.0" text="Due Date:">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <DatePicker layoutX="449.0" layoutY="85.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <Label layoutX="651.0" layoutY="27.0" text="Type:">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="myPlans_type" layoutX="697.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <Label layoutX="643.0" layoutY="89.0" text="Status:">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="myPlans_status" layoutX="698.0" layoutY="88.0" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <Button fx:id="myPlans_updateBtn" layoutX="464.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="update-btn" text="Update" />
+                                                <Button fx:id="myPlans_addBtn" layoutX="350.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Add" />
+                                                <Button fx:id="myPlans_clearBtn" layoutX="618.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="clear-btn" text="Clear" />
+                                                <Button fx:id="myPlans_deleteBtn" layoutX="732.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="delete-btn" text="Delete" />
+                                                <Label layoutX="52.0" layoutY="27.0" text="Plan:">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="myPlans_plan" layoutX="96.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                            </children>
+                                            <styleClass>
+                                                <String fx:value="border" />
+                                                <String fx:value="white-bg" />
+                                            </styleClass>
+                                        </AnchorPane>
+                                        <TableView fx:id="myPlans_tableView" layoutX="10.0" layoutY="235.0" prefHeight="308.0" prefWidth="866.0" styleClass="white-bg">
+                                            <columns>
+                                                <TableColumn fx:id="myPlans_col_plan" prefWidth="183.19996070861816" text="Plan" />
+                                                <TableColumn fx:id="myPlans_col_description" prefWidth="141.60003662109375" text="Description" />
+                                                <TableColumn fx:id="myPlans_col_dateCreated" prefWidth="164.800048828125" text="Date Created" />
+                                                <TableColumn fx:id="myPlans_col_dueDate" prefWidth="145.60000610351562" text="Due Date" />
+                                                <TableColumn fx:id="myPlans_col_type" prefWidth="115.99993896484375" text="Type" />
+                                                <TableColumn fx:id="myPlans_col_status" prefWidth="115.199951171875" text="Status" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="finishedPlans_form" layoutX="192.0" layoutY="102.0" prefHeight="556.8" prefWidth="886.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="12.0" layoutY="8.8" prefHeight="537.0" prefWidth="863.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="9.0">
+                                            <children>
+                                                <TableView fx:id="finishedPlans_tableView" layoutX="9.0" layoutY="74.0" prefHeight="453.0" prefWidth="846.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="finishedPlans_col_planID" prefWidth="68.79998970031738" text="Plan ID" />
+                                                        <TableColumn fx:id="finishedPlans_col_plan" prefWidth="135.99999237060547" text="Plan" />
+                                                        <TableColumn fx:id="finishedPlans_col_description" prefWidth="169.60003662109375" text="Description" />
+                                                        <TableColumn fx:id="finishedPlans_col_dateCreated" prefWidth="143.19998168945312" text="Date Created" />
+                                                        <TableColumn fx:id="finishedPlans_col_dueDate" minWidth="0.0" prefWidth="144.0" text="Due Date" />
+                                                        <TableColumn fx:id="finishedPlans_col_type" prefWidth="85.5999755859375" text="Type" />
+                                                        <TableColumn fx:id="finishedPlans_col_status" prefWidth="110.4000244140625" text="Status" />
+                                                    </columns>
+                                                </TableView>
+                                                <Label layoutX="14.0" layoutY="27.0" text="Status:">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="finishedPlans_status" layoutX="70.0" layoutY="25.0" prefHeight="28.0" prefWidth="150.0" promptText="Choose..." styleClass="textfield" />
+                                                <Button fx:id="finishedPlans_filterBtn" layoutX="233.0" layoutY="22.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="77.0" styleClass="btn" text="Filter" />
+                                            </children>
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
