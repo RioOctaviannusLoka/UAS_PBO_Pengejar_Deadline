@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.taskmanagement.indexController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" />
-</VBox>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" stylesheets="@design.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskmanagement.indexController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="bg-form">
+            <children>
+                <BorderPane layoutX="143.0" layoutY="39.0" prefHeight="450.4" prefWidth="650.4" styleClass="bg-form" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <center>
+                        <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane fx:id="login_form" layoutX="164.0" layoutY="41.0" prefHeight="368.0" prefWidth="321.0" styleClass="white-form">
+                                    <children>
+                                        <FontAwesomeIconView fill="#304352" glyphName="USER" layoutX="139.0" layoutY="65.0" size="5em" />
+                                        <Label layoutX="113.0" layoutY="74.0" text="Login User">
+                                            <font>
+                                                <Font name="Tahoma" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="si_username" layoutX="35.0" layoutY="132.0" prefHeight="35.0" prefWidth="250.0" promptText="Username" />
+                                        <PasswordField fx:id="si_password" layoutX="35.0" layoutY="177.0" prefHeight="35.0" prefWidth="250.0" promptText="Password" />
+                                        <Button fx:id="si_loginBtn" layoutX="77.0" layoutY="237.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="40.0" prefWidth="166.0" styleClass="login-btn" text="Login" />
+                                        <Label layoutX="85.0" layoutY="334.0" text="Not Register?" />
+                                        <Hyperlink fx:id="si_createAccount" layoutX="160.0" layoutY="331.0" onAction="#swicthForm" text="Create an account" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="signup_form" layoutX="164.0" layoutY="41.0" prefHeight="368.0" prefWidth="321.0" styleClass="white-form" visible="false">
+                                    <children>
+                                        <FontAwesomeIconView fill="#304352" glyphName="USER_PLUS" layoutX="126.0" layoutY="65.0" size="5em" />
+                                        <Label layoutX="101.0" layoutY="74.0" text="Register User">
+                                            <font>
+                                                <Font name="Tahoma" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="su_username" layoutX="35.0" layoutY="132.0" prefHeight="35.0" prefWidth="250.0" promptText="Username" />
+                                        <PasswordField fx:id="su_password" layoutX="35.0" layoutY="177.0" prefHeight="35.0" prefWidth="250.0" promptText="Password" />
+                                        <Button fx:id="su_signupBtn" layoutX="77.0" layoutY="237.0" mnemonicParsing="false" onAction="#registerAccount" prefHeight="40.0" prefWidth="166.0" styleClass="login-btn" text="Sign Up" />
+                                        <Hyperlink fx:id="su_alreadyhaveAccount" layoutX="88.0" layoutY="330.0" onAction="#swicthForm" text="Already have an Account?" />
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
