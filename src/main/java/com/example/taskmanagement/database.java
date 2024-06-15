@@ -8,8 +8,8 @@ class database {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             // CONNECT DATABASE
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost/plan",
-                    "root","password"
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost/task_management",
+                    "root",""
             );
             return connect;
 
