@@ -162,6 +162,42 @@ public class taskController implements Initializable {
         home_username.setText(data.username);
     }
 
+    // TODO: multithreading
+    //Display Number of Active Plans di Home
+    public void displayNAP(){
+        try {
+            prepare = database.connectDb().prepareStatement("SELECT * FROM plan WHERE id_user = ? AND (status = ? OR status = ?);");
+            prepare.setInt(1, data.idUser);
+            prepare.setString(2, "In Progress");
+            prepare.setString(3, "Unfinished");
+            result = prepare.executeQuery();
+
+            int size = 0;
+            while(result.next()){
+                size++;
+            }
+
+            home_NAP.setText(String.valueOf(size));
+        } catch (Exception e){e.printStackTrace();}
+    }
+
+    // Display Number of Finished Plans
+    public void displayFP(){
+        try {
+            prepare = database.connectDb().prepareStatement("SELECT * FROM plan WHERE id_user = ? AND status = ?;");
+            prepare.setInt(1, data.idUser);
+            prepare.setString(2, "Completed");
+            result = prepare.executeQuery();
+
+            int size = 0;
+            while(result.next()){
+                size++;
+            }
+
+            home_FP.setText(String.valueOf(size));
+        } catch (Exception e){e.printStackTrace();}
+    }
+
 
     // Add Task
     public void addTask(){
@@ -377,6 +413,8 @@ public class taskController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         displayUsername();
+        displayNAP();
+        displayFP();
         addTaskShowListData();
         myPlans_status.setItems(FXCollections.observableArrayList(
                 "Unfinished", "In Progress", "Completed"));
