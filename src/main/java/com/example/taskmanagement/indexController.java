@@ -103,6 +103,7 @@ public class indexController implements Initializable {
 
                         Stage stage = new Stage();
                         Scene scene = new Scene(root);
+                        stage.setTitle("Plan your to do list");
                         stage.setScene(scene);
                         stage.show();
                     }else{
@@ -188,7 +189,7 @@ public class indexController implements Initializable {
         }catch (Exception e) {e.printStackTrace();}
     }
 
-    public void swicthForm(ActionEvent event){
+    public void switchForm(ActionEvent event){
         if(event.getSource() == si_createAccount){
             signup_form.setVisible(true);
             login_form.setVisible(false);

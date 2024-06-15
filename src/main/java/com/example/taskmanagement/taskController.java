@@ -1,52 +1,57 @@
 package com.example.taskmanagement;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class taskController implements Initializable {
     @FXML
-    private Button finishedPlans_btn;
+    private Button filterPlans_btn;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_dateCreated;
+    private TableColumn<?, ?> filterPlans_col_dateCreated;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_description;
+    private TableColumn<?, ?> filterPlans_col_description;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_dueDate;
+    private TableColumn<?, ?> filterPlans_col_dueDate;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_plan;
+    private TableColumn<?, ?> filterPlans_col_plan;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_planID;
+    private TableColumn<?, ?> filterPlans_col_planID;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_status;
+    private TableColumn<?, ?> filterPlans_col_status;
 
     @FXML
-    private TableColumn<?, ?> finishedPlans_col_type;
+    private TableColumn<?, ?> filterPlans_col_type;
 
     @FXML
-    private Button finishedPlans_filterBtn;
+    private Button filterPlans_filterBtn;
 
     @FXML
-    private AnchorPane finishedPlans_form;
+    private AnchorPane filterPlans_form;
 
     @FXML
-    private TextField finishedPlans_search;
+    private TextField filterPlans_search;
 
     @FXML
-    private ComboBox<?> finishedPlans_status;
+    private ComboBox<?> filterPlans_status;
 
     @FXML
-    private TableView<?> finishedPlans_tableView;
+    private TableView<?> filterPlans_tableView;
 
     @FXML
     private Label home_FP;
@@ -129,8 +134,40 @@ public class taskController implements Initializable {
     @FXML
     private Label page_label;
 
-    public void switchForm(){
+    public void switchForm(ActionEvent event){
+        // Hide all Form
+        home_form.setVisible(false);
+        myPlans_form.setVisible(false);
+        filterPlans_form.setVisible(false);
 
+        // Show form according to the button
+        if (event.getSource() == home_btn) {
+            home_form.setVisible(true);
+            page_label.setText("Home");
+        } else if (event.getSource() == myPlans_btn) {
+            myPlans_form.setVisible(true);
+            page_label.setText("My Plans");
+        } else if (event.getSource() == filterPlans_btn) {
+            filterPlans_form.setVisible(true);
+            page_label.setText("Filter Plans");
+        } else if (event.getSource() == logout_btn) {
+            // Hide plan.fxml
+            logout_btn.getScene().getWindow().hide();
+
+            // Show index.fxml
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("index.fxml"));
+
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.setTitle("Plan your to do list");
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
     }
 
     @Override
