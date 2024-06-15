@@ -58,9 +58,6 @@ public class indexController implements Initializable {
     private PreparedStatement prepare;
     private ResultSet result;
 
-    // Id User for usage in taskController.java
-    private static int idUser;
-
     private Alert alert;
 
     public void loginAccount(){
@@ -87,7 +84,8 @@ public class indexController implements Initializable {
                     if (password.equals(hashedPassword)){
                         // Save id_user for usage in other forms
                         int id_user = result.getInt("id_user");
-                        SetIdUser(id_user);
+                        data.idUser = id_user;
+                        data.username = si_username.getText();
 
                         alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Information Massage");
@@ -214,14 +212,6 @@ public class indexController implements Initializable {
         } catch (Exception e) {
         }
         return null;
-    }
-
-    private void SetIdUser(int id_user){
-        idUser = id_user;
-    }
-
-    public static int GetIdUser(){
-        return idUser;
     }
 
     @Override

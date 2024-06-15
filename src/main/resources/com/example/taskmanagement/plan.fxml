@@ -59,7 +59,7 @@
                                             <graphic>
                                                 <FontAwesomeIconView fill="#2c3e50" glyphName="CHECK_SQUARE_ALT" />
                                             </graphic></Button>
-                                        <Button fx:id="logout_btn" layoutX="14.0" layoutY="485.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="40.0" styleClass="signout">
+                                        <Button fx:id="logout_btn" layoutX="14.0" layoutY="485.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="signout">
                                             <graphic>
                                                 <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="2em" styleClass="signout" text="" />
                                             </graphic>
@@ -164,13 +164,13 @@
                                                         <Font size="15.0" />
                                                     </font>
                                                 </Label>
-                                                <DatePicker fx:id="myPlans_startDate" layoutX="450.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <DatePicker fx:id="myPlans_dateCreated" layoutX="450.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
                                                 <Label layoutX="373.0" layoutY="85.0" text="Due Date:">
                                                     <font>
                                                         <Font size="15.0" />
                                                     </font>
                                                 </Label>
-                                                <DatePicker layoutX="449.0" layoutY="85.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <DatePicker fx:id="myPlans_dueDate" layoutX="449.0" layoutY="85.0" styleClass="textfield" stylesheets="@taskDesign.css" />
                                                 <Label layoutX="651.0" layoutY="27.0" text="Type:">
                                                     <font>
                                                         <Font size="15.0" />
@@ -184,7 +184,7 @@
                                                 </Label>
                                                 <ComboBox fx:id="myPlans_status" layoutX="698.0" layoutY="88.0" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@taskDesign.css" />
                                                 <Button fx:id="myPlans_updateBtn" layoutX="464.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="update-btn" text="Update" />
-                                                <Button fx:id="myPlans_addBtn" layoutX="350.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Add" />
+                                                <Button fx:id="myPlans_addBtn" layoutX="350.0" layoutY="141.0" mnemonicParsing="false" onAction="#addTask" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Add" />
                                                 <Button fx:id="myPlans_clearBtn" layoutX="618.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="clear-btn" text="Clear" />
                                                 <Button fx:id="myPlans_deleteBtn" layoutX="732.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="delete-btn" text="Delete" />
                                                 <Label layoutX="52.0" layoutY="27.0" text="Plan:">
@@ -199,7 +199,7 @@
                                                 <String fx:value="white-bg" />
                                             </styleClass>
                                         </AnchorPane>
-                                        <TableView fx:id="myPlans_tableView" layoutX="10.0" layoutY="235.0" prefHeight="308.0" prefWidth="866.0" styleClass="white-bg">
+                                        <TableView fx:id="myPlans_tableView" layoutX="10.0" layoutY="235.0" onMouseClicked="#tableItemSelect" prefHeight="308.0" prefWidth="866.0" styleClass="white-bg">
                                             <columns>
                                                 <TableColumn fx:id="myPlans_col_plan" prefWidth="183.19996070861816" text="Plan" />
                                                 <TableColumn fx:id="myPlans_col_description" prefWidth="141.60003662109375" text="Description" />
