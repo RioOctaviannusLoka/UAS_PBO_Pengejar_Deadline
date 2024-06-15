@@ -12,8 +12,8 @@ public class taskData {
     private String type;
     private String status;
 
-    public taskData(String plan, String description, Date date_created, Date due_date, String type, String status) {
-        this.id_plan =id_plan;
+    public taskData(int id_plan, String plan, String description, Date date_created, Date due_date, String type, String status) {
+        this.id_plan = id_plan;
         this.plan = plan;
         this.description = description;
         this.date_created = date_created;

@@ -149,7 +149,7 @@
                                         </AnchorPane>
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane fx:id="myPlans_form" layoutX="250.0" layoutY="166.0" prefHeight="556.8" prefWidth="886.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <AnchorPane fx:id="myPlans_form" layoutX="250.0" layoutY="166.0" prefHeight="556.8" prefWidth="886.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
                                         <AnchorPane fx:id="myPlans_endDate" layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="866.0">
                                             <children>
@@ -183,7 +183,7 @@
                                                     </font>
                                                 </Label>
                                                 <ComboBox fx:id="myPlans_status" layoutX="698.0" layoutY="88.0" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@taskDesign.css" />
-                                                <Button fx:id="myPlans_updateBtn" disable="true" layoutX="464.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="update-btn" text="Update" />
+                                                <Button fx:id="myPlans_updateBtn" disable="true" layoutX="464.0" layoutY="141.0" mnemonicParsing="false" onAction="#updateTask" prefHeight="34.0" prefWidth="103.0" styleClass="update-btn" text="Update" />
                                                 <Button fx:id="myPlans_addBtn" layoutX="350.0" layoutY="141.0" mnemonicParsing="false" onAction="#addTask" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Add" />
                                                 <Button fx:id="myPlans_clearBtn" layoutX="618.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="clear-btn" text="Clear" />
                                                 <Button fx:id="myPlans_deleteBtn" disable="true" layoutX="732.0" layoutY="141.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" styleClass="delete-btn" text="Delete" />
@@ -201,12 +201,13 @@
                                         </AnchorPane>
                                         <TableView fx:id="myPlans_tableView" layoutX="10.0" layoutY="235.0" onMouseClicked="#tableItemSelect" prefHeight="308.0" prefWidth="866.0" styleClass="white-bg">
                                             <columns>
-                                                <TableColumn fx:id="myPlans_col_plan" prefWidth="183.19996070861816" text="Plan" />
-                                                <TableColumn fx:id="myPlans_col_description" prefWidth="141.60003662109375" text="Description" />
-                                                <TableColumn fx:id="myPlans_col_dateCreated" prefWidth="164.800048828125" text="Date Created" />
-                                                <TableColumn fx:id="myPlans_col_dueDate" prefWidth="145.60000610351562" text="Due Date" />
-                                                <TableColumn fx:id="myPlans_col_type" prefWidth="115.99993896484375" text="Type" />
-                                                <TableColumn fx:id="myPlans_col_status" prefWidth="115.199951171875" text="Status" />
+                                    <TableColumn fx:id="myPlans_col_planId" prefWidth="75.0" text="Plan ID" />
+                                                <TableColumn fx:id="myPlans_col_plan" prefWidth="120.0" text="Plan" />
+                                                <TableColumn fx:id="myPlans_col_description" prefWidth="180.0" text="Description" />
+                                                <TableColumn fx:id="myPlans_col_dateCreated" prefWidth="110.0" text="Date Created" />
+                                                <TableColumn fx:id="myPlans_col_dueDate" prefWidth="110.0" text="Due Date" />
+                                                <TableColumn fx:id="myPlans_col_type" prefWidth="140.0" text="Type" />
+                                                <TableColumn fx:id="myPlans_col_status" prefWidth="127.99997558593748" text="Status" />
                                             </columns>
                                         </TableView>
                                     </children>
