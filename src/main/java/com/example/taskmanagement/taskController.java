@@ -194,6 +194,9 @@ public class taskController implements Initializable {
 
                 addTaskShowListData();
                 resetText();
+
+                myPlans_updateBtn.setDisable(true);
+                myPlans_deleteBtn.setDisable(true);
             }
         } catch (Exception e){e.printStackTrace();}
     }
@@ -207,6 +210,8 @@ public class taskController implements Initializable {
         myPlans_status.getSelectionModel().clearSelection();
     }
 
+
+    // Add Task
     public ObservableList<taskData> addTaskListData() {
         ObservableList<taskData> listData = FXCollections.observableArrayList();
         String sql = "SELECT * FROM plan";
@@ -247,6 +252,8 @@ public class taskController implements Initializable {
         myPlans_tableView.setItems(addTaskList);
     }
 
+
+
     public void tableItemSelect(){
         taskData taskDatas = myPlans_tableView.getSelectionModel().getSelectedItem();
         int idx = myPlans_tableView.getSelectionModel().getSelectedIndex();
@@ -259,6 +266,9 @@ public class taskController implements Initializable {
         myPlans_dueDate.setValue(taskDatas.getDue_date().toLocalDate());
         myPlans_type.setText(taskDatas.getType());
         myPlans_status.setValue(taskDatas.getStatus());
+
+        myPlans_updateBtn.setDisable(false);
+        myPlans_deleteBtn.setDisable(false);
     }
 
     // Display username di Home
