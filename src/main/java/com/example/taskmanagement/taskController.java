@@ -338,6 +338,38 @@ public class taskController implements Initializable {
         } catch (Exception e){e.printStackTrace();}
     }
 
+    // Delete Task
+    public void deleteTask(){
+        connect = database.connectDb();
+        Alert alert;
+        try{
+            alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirm Deletion Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Anda yakin ingin menghapus data ini?");
+            Optional<ButtonType> option = alert.showAndWait();
+
+            if(option.get().equals(ButtonType.OK)){
+                String sql = "DELETE FROM plan WHERE id_plan = ?;";
+                prepare = connect.prepareStatement(sql);
+                prepare.setInt(1, id_plan);
+                prepare.executeUpdate();
+
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Berhasil dihapus!!!");
+                alert.showAndWait();
+
+                addTaskShowListData();
+                resetText();
+
+                myPlans_updateBtn.setDisable(true);
+                myPlans_deleteBtn.setDisable(true);
+            }
+        } catch (Exception e){e.printStackTrace();}
+    }
+
 
     public void resetText(){
         myPlans_plan.setText("");
