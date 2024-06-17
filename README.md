@@ -119,6 +119,19 @@ Dengan fokus pada kemudahan penggunaan dan kinerja, aplikasi ini mengelola data 
 <br>
 
 ## Cara Penggunaan
+1. Buka file taskApplication.java pada folder src\main\java\com\example\taskmanagement, lalu tekan tombol 'Run'.
+2. Bila sudah memiliki akun, masukkan username dan password, lalu tekan tombol login. <br>
+   Jika belum, tekan tombol 'Create an account', lalu masukkan username dan password untuk pembuatan akun baru.
+3. Untuk berpindah halaman Menu, tekan tombol 'Home', 'My Plans', dan 'Filter Plans' pada sidebar.
+4. Pada Menu Home, akan ditampilkan Jumlah plans yang statusnya Unfinished or In Progress dan Jumlah plan yang statusnya Completed.
+5. Pada Menu My Plans, silahkan masukkan plan, description (opsional), date created dan due date(dengan menekan ikon kalender, lalu memilih tanggal), type (opsional), dan status (pilih salah satu item pada combobox). Setelah itu, tekan tombol 'Add' untuk menambahkan plan. Apabila ingin menghapus seluruh data yang telah diisi sebelumnya, tekan tombol clear.
+6. Untuk memperbarui plan, pilih salah satu cell pada tabel yang tersedia di My Plans. Data yang terpilih secara otomatis akan terisi pada text field masing-masing. Ubah data yang ingin diubah, lalu tekan tombol 'Update'.
+7. Untuk menghapus plan, pilih salah satu cell pada tabel yang tersedia di My Plans. Lalu tekan tombol 'Delete'. Setelah itu, akan muncul sebuah pop up yang berisi pesan berupa "Anda yakin ingin menghapus data ini?". Tekan tombol 'OK' apabila ingin menghapus pesan. Tekan tombol 'Cancel' apabila ingin membatalkannya.
+8. Pada menu Filter Plans, ketik kata kunci yang ingin dicari pada search bar. Data yang ingin dicari secara otomatis akan difilter berdasarkan nama plan pada tabel Filter Plans.
+9. Pilih status plan yang di inginkan dan tekan tombol 'Filter' untuk menfilter data berdasarkan status dari plan tersebut.
+10. Tekan tombol 'Sign out' pada sidebar dan klik 'OK' pada pop up yang muncul untuk keluar dari akun.
+11. Tekan tombol X untuk menutup aplikasi.
+   
 
 <br>
 
