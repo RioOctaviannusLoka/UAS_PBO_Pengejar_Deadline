@@ -164,13 +164,13 @@
                                                         <Font size="15.0" />
                                                     </font>
                                                 </Label>
-                                                <DatePicker fx:id="myPlans_dateCreated" layoutX="450.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <DatePicker fx:id="myPlans_dateCreated" editable="false" layoutX="450.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
                                                 <Label layoutX="373.0" layoutY="85.0" text="Due Date:">
                                                     <font>
                                                         <Font size="15.0" />
                                                     </font>
                                                 </Label>
-                                                <DatePicker fx:id="myPlans_dueDate" layoutX="449.0" layoutY="85.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <DatePicker fx:id="myPlans_dueDate" editable="false" layoutX="449.0" layoutY="85.0" styleClass="textfield" stylesheets="@taskDesign.css" />
                                                 <Label layoutX="651.0" layoutY="27.0" text="Type:">
                                                     <font>
                                                         <Font size="15.0" />
@@ -227,7 +227,7 @@
                                                         <TableColumn fx:id="filterPlans_col_status" prefWidth="110.4000244140625" text="Status" />
                                                     </columns>
                                                 </TableView>
-                                                <TextField fx:id="filterPlans_search" layoutX="14.0" layoutY="21.0" prefHeight="30.0" prefWidth="273.0" promptText="Search" styleClass="search" />
+                                                <TextField fx:id="filterPlans_search" layoutX="14.0" layoutY="21.0" onKeyReleased="#FilterPlansTableSearch" onKeyTyped="#FilterPlansTableSearch" prefHeight="30.0" prefWidth="273.0" promptText="Search" styleClass="search" />
                                                 <FontAwesomeIconView glyphName="SEARCH" layoutX="20.0" layoutY="42.0" size="1.5em" />
                                                 <Label layoutX="348.0" layoutY="23.0" text="Status:">
                                                     <font>
