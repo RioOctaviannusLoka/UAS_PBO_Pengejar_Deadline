@@ -20,8 +20,8 @@
 
 1. Login
 
-<img align="left" src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/4ab2c724-2569-46f7-bdf0-a7d5bc5b642c" height="380" width="480">
-<img align="left" src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/379b47cf-72f4-4100-bd74-3a2e8cca4561" height="380" width="480">
+<img align="left" src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/4ab2c724-2569-46f7-bdf0-a7d5bc5b642c" height="350" width="450">
+<img align="left" src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/379b47cf-72f4-4100-bd74-3a2e8cca4561" height="350" width="450">
 
 <br clear="left"/>
 
@@ -63,6 +63,27 @@
 
 <img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/8c05f03e-1349-4b89-874f-7de7b2df8965" height="380" width="700">
 
+### Exception Handling
+
+1. Login
+- Ketika ada textbox yang tidak diisi (kosong)
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/4fc8a338-2d40-47bc-9f20-c30427860764" height="380" width="480">
+
+2. Register
+- Ketika ada textbox yang tidak diisi (kosong)
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/2b2c86a0-0855-4ed7-8294-ff9d10767ee1" height="380" width="480">
+
+- Ketika menggunakan username yang pernah dipakai sebelumnya
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/e1dff2e1-4978-4469-bbb6-5c54182c99c2" height="380" width="480">
+
+4. My Plans
+- Ketika ada textbox yang tidak diisi (kosong) saat add data
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/f9825dd3-16b2-481a-b370-ecfe2632ea1d" height="380" width="700">
+
+- Ketika ada textbox yang tidak diisi (kosong) saat update data
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/b3f76d3d-f3b6-4ae6-8a8a-c545680be7d3" height="380" width="700">
+
+<br>
 <br>
 
 ## Video Penjelasan
