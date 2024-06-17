@@ -1,4 +1,5 @@
-# UAS_PBO_Pengejar_Deadline
+<h1 align="center">Aplikasi Manajemen Tugas</h1>
+<p align="center"><img src="src\main\resources\com\example\taskmanagement\Image\logo.png"/></p>
 
 ---
 
@@ -14,6 +15,53 @@
 ---
 
 ## Screenshot Program
+
+### Tampilan Program
+
+1. Login
+
+<img align="left" src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/4ab2c724-2569-46f7-bdf0-a7d5bc5b642c" height="380" width="480">
+<img align="left" src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/379b47cf-72f4-4100-bd74-3a2e8cca4561" height="380" width="480">
+
+<br clear="left"/>
+
+2. Register
+
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/82217469-21ab-4976-b3a1-5530eb52e6a8" height="380" width="480">
+
+3. Home
+
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/4a5e0e9b-d763-45ff-ab2e-9b4595b63aa1" height="380" width="700">
+
+4. Tampilan Awal MyPlans
+
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/050ab570-be30-4237-8ed1-53f0ef7b6f69" height="380" width="700">
+
+5. Add, Update, Delete Data di MyPlans
+- Add Plan
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/0c2e989d-3a87-43e3-8fe8-d33e97444fbb" height="380" width="700">
+
+- Update Plan
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/4878618b-8f9a-4d52-9166-71d98f66c1b4" height="380" width="700">
+
+- Delete Plan
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/8a5d548e-365d-4c64-9498-091f148890ec" height="380" width="700">
+
+6. Tampilan Awal Filter Plans
+
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/4a001a39-e870-4e06-ada8-518890077857" height="380" width="700">
+
+7. Search pada Filter Plans
+
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/ba768f0f-aff5-415e-b941-bb9d7bf1cdaf" height="380" width="700">
+
+8. Penfilter dengan status pada Filter Plans
+
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/2627bd89-7c82-4a2e-a26f-6dfab282a9e0" height="380" width="700">
+
+9. Sign Out
+
+<img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114414891/8c05f03e-1349-4b89-874f-7de7b2df8965" height="380" width="700">
 
 <br>
 
