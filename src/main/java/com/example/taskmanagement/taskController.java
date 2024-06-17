@@ -150,13 +150,13 @@ public class taskController implements Initializable {
     private Label page_label;
 
     // Database
-    //Database
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
 
     private int id_plan;
 
+    // Home
     // Display username di Home
     public void displayUsername(){
         home_username.setText(data.username);
@@ -198,7 +198,7 @@ public class taskController implements Initializable {
         } catch (Exception e){e.printStackTrace();}
     }
 
-
+    // My Plans
     // Add Task
     public void addTask(){
         String sql = "INSERT INTO plan "
@@ -242,6 +242,8 @@ public class taskController implements Initializable {
 
                 addTaskShowListData();
                 resetText();
+                displayNAP();
+                displayFP();
 
                 myPlans_updateBtn.setDisable(true);
                 myPlans_deleteBtn.setDisable(true);
@@ -331,6 +333,42 @@ public class taskController implements Initializable {
 
                 addTaskShowListData();
                 resetText();
+                displayNAP();
+                displayFP();
+
+                myPlans_updateBtn.setDisable(true);
+                myPlans_deleteBtn.setDisable(true);
+            }
+        } catch (Exception e){e.printStackTrace();}
+    }
+
+    // Delete Task
+    public void deleteTask(){
+        connect = database.connectDb();
+        Alert alert;
+        try{
+            alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirm Deletion Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Anda yakin ingin menghapus data ini?");
+            Optional<ButtonType> option = alert.showAndWait();
+
+            if(option.get().equals(ButtonType.OK)){
+                String sql = "DELETE FROM plan WHERE id_plan = ?;";
+                prepare = connect.prepareStatement(sql);
+                prepare.setInt(1, id_plan);
+                prepare.executeUpdate();
+
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Berhasil dihapus!!!");
+                alert.showAndWait();
+
+                addTaskShowListData();
+                resetText();
+                displayNAP();
+                displayFP();
 
                 myPlans_updateBtn.setDisable(true);
                 myPlans_deleteBtn.setDisable(true);
