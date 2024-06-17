@@ -164,13 +164,13 @@
                                                         <Font size="15.0" />
                                                     </font>
                                                 </Label>
-                                                <DatePicker fx:id="myPlans_dateCreated" layoutX="450.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <DatePicker fx:id="myPlans_dateCreated" editable="false" layoutX="450.0" layoutY="27.0" styleClass="textfield" stylesheets="@taskDesign.css" />
                                                 <Label layoutX="373.0" layoutY="85.0" text="Due Date:">
                                                     <font>
                                                         <Font size="15.0" />
                                                     </font>
                                                 </Label>
-                                                <DatePicker fx:id="myPlans_dueDate" layoutX="449.0" layoutY="85.0" styleClass="textfield" stylesheets="@taskDesign.css" />
+                                                <DatePicker fx:id="myPlans_dueDate" editable="false" layoutX="449.0" layoutY="85.0" styleClass="textfield" stylesheets="@taskDesign.css" />
                                                 <Label layoutX="651.0" layoutY="27.0" text="Type:">
                                                     <font>
                                                         <Font size="15.0" />
@@ -201,7 +201,7 @@
                                         </AnchorPane>
                                         <TableView fx:id="myPlans_tableView" layoutX="10.0" layoutY="235.0" onMouseClicked="#tableItemSelect" prefHeight="308.0" prefWidth="866.0" styleClass="white-bg">
                                             <columns>
-                                    <TableColumn fx:id="myPlans_col_planId" prefWidth="75.0" text="Plan ID" />
+                                                <TableColumn fx:id="myPlans_col_planId" prefWidth="75.0" text="Plan ID" />
                                                 <TableColumn fx:id="myPlans_col_plan" prefWidth="120.0" text="Plan" />
                                                 <TableColumn fx:id="myPlans_col_description" prefWidth="180.0" text="Description" />
                                                 <TableColumn fx:id="myPlans_col_dateCreated" prefWidth="110.0" text="Date Created" />
@@ -227,7 +227,7 @@
                                                         <TableColumn fx:id="filterPlans_col_status" prefWidth="110.4000244140625" text="Status" />
                                                     </columns>
                                                 </TableView>
-                                                <TextField fx:id="filterPlans_search" layoutX="14.0" layoutY="21.0" prefHeight="30.0" prefWidth="273.0" promptText="Search" styleClass="search" />
+                                                <TextField fx:id="filterPlans_search" layoutX="14.0" layoutY="21.0" onKeyReleased="#FilterPlansTableSearch" onKeyTyped="#FilterPlansTableSearch" prefHeight="30.0" prefWidth="273.0" promptText="Search" styleClass="search" />
                                                 <FontAwesomeIconView glyphName="SEARCH" layoutX="20.0" layoutY="42.0" size="1.5em" />
                                                 <Label layoutX="348.0" layoutY="23.0" text="Status:">
                                                     <font>
@@ -235,7 +235,7 @@
                                                     </font>
                                                 </Label>
                                                 <ComboBox fx:id="filterPlans_status" layoutX="404.0" layoutY="21.0" prefHeight="28.0" prefWidth="150.0" promptText="Choose..." styleClass="textfield" />
-                                                <Button fx:id="filterPlans_filterBtn" layoutX="567.0" layoutY="18.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="77.0" styleClass="btn" text="Filter" />
+                                                <Button fx:id="filterPlans_filterBtn" layoutX="567.0" layoutY="18.0" mnemonicParsing="false" onAction="#DisplayTasksItemTable" prefHeight="34.0" prefWidth="77.0" styleClass="btn" text="Filter" />
                                             </children>
                                             <styleClass>
                                                 <String fx:value="white-bg" />

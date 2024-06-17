@@ -2,6 +2,8 @@ package com.example.taskmanagement;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -27,25 +31,25 @@ public class taskController implements Initializable {
     private Button filterPlans_btn;
 
     @FXML
-    private TableColumn<?, ?> filterPlans_col_dateCreated;
+    private TableColumn<taskData, String> filterPlans_col_dateCreated;
 
     @FXML
-    private TableColumn<?, ?> filterPlans_col_description;
+    private TableColumn<taskData, String> filterPlans_col_description;
 
     @FXML
-    private TableColumn<?, ?> filterPlans_col_dueDate;
+    private TableColumn<taskData, String> filterPlans_col_dueDate;
 
     @FXML
-    private TableColumn<?, ?> filterPlans_col_plan;
+    private TableColumn<taskData, String> filterPlans_col_plan;
 
     @FXML
-    private TableColumn<?, ?> filterPlans_col_planID;
+    private TableColumn<taskData, String> filterPlans_col_planID;
 
     @FXML
-    private TableColumn<?, ?> filterPlans_col_status;
+    private TableColumn<taskData, String> filterPlans_col_status;
 
     @FXML
-    private TableColumn<?, ?> filterPlans_col_type;
+    private TableColumn<taskData, String> filterPlans_col_type;
 
     @FXML
     private Button filterPlans_filterBtn;
@@ -57,10 +61,10 @@ public class taskController implements Initializable {
     private TextField filterPlans_search;
 
     @FXML
-    private ComboBox<?> filterPlans_status;
+    private ComboBox<String> filterPlans_status;
 
     @FXML
-    private TableView<?> filterPlans_tableView;
+    private TableView<taskData> filterPlans_tableView;
 
     @FXML
     private Label home_FP;
@@ -242,6 +246,7 @@ public class taskController implements Initializable {
 
                 addTaskShowListData();
                 resetText();
+                DisplayTasksItemTable();
                 displayNAP();
                 displayFP();
 
@@ -332,6 +337,7 @@ public class taskController implements Initializable {
                 alert.showAndWait();
 
                 addTaskShowListData();
+                DisplayTasksItemTable();
                 resetText();
                 displayNAP();
                 displayFP();
@@ -366,6 +372,7 @@ public class taskController implements Initializable {
                 alert.showAndWait();
 
                 addTaskShowListData();
+                DisplayTasksItemTable();
                 resetText();
                 displayNAP();
                 displayFP();
@@ -448,6 +455,74 @@ public class taskController implements Initializable {
         }
     }
 
+    // Filter Plans
+    public void DisplayTasksItemTable() {
+        ObservableList<taskData> listData = FXCollections.observableArrayList();
+
+        connect = database.connectDb();
+        try {
+            if(filterPlans_status.getValue().equals("All")) {
+                String sql = "SELECT * FROM plan WHERE id_user = ?;";
+                prepare = connect.prepareStatement(sql);
+                prepare.setInt(1, data.idUser);
+                result = prepare.executeQuery();
+            }else{
+                String sql = "SELECT * FROM plan WHERE id_user = ? AND status = ?;";
+                prepare = connect.prepareStatement(sql);
+                prepare.setInt(1, data.idUser);
+                prepare.setString(2, filterPlans_status.getValue());
+                result = prepare.executeQuery();
+            }
+
+            taskData taskDatas;
+            while (result.next()) {
+                taskDatas = new taskData(
+                        result.getInt("id_plan"),
+                        result.getString("plan"),
+                        result.getString("description"),
+                        result.getDate("date_created"),
+                        result.getDate("due_date"),
+                        result.getString("type"),
+                        result.getString("status"));
+                listData.add(taskDatas);
+            }
+
+            // Set table data
+            filterPlans_col_planID.setCellValueFactory(new PropertyValueFactory<>("id_plan"));
+            filterPlans_col_plan.setCellValueFactory(new PropertyValueFactory<>("plan"));
+            filterPlans_col_description.setCellValueFactory(new PropertyValueFactory<>("description"));
+            filterPlans_col_dateCreated.setCellValueFactory(new PropertyValueFactory<>("date_created"));
+            filterPlans_col_dueDate.setCellValueFactory(new PropertyValueFactory<>("due_date"));
+            filterPlans_col_type.setCellValueFactory(new PropertyValueFactory<>("type"));
+            filterPlans_col_status.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+            filterPlans_tableView.setItems(listData);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void FilterPlansTableSearch(KeyEvent event) {
+        String searchText = filterPlans_search.getText().toLowerCase().trim();
+
+        if (searchText.isEmpty()) {
+            DisplayTasksItemTable();
+            return;
+        }
+
+        ObservableList<taskData> filteredList = FXCollections.observableArrayList();
+        ObservableList<taskData> currentList = filterPlans_tableView.getItems();
+
+        currentList.forEach(task -> {
+            if (task.getPlan().toLowerCase().contains(searchText)) {
+                filteredList.add(task);
+            }
+        });
+
+        filterPlans_tableView.setItems(filteredList);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         displayUsername();
@@ -456,5 +531,9 @@ public class taskController implements Initializable {
         addTaskShowListData();
         myPlans_status.setItems(FXCollections.observableArrayList(
                 "Unfinished", "In Progress", "Completed"));
+        filterPlans_status.setItems(FXCollections.observableArrayList(
+                "All", "Unfinished", "In Progress", "Completed"));
+        filterPlans_status.setValue("All");
+        DisplayTasksItemTable();
     }
 }
