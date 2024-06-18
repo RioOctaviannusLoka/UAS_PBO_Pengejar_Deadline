@@ -116,6 +116,24 @@ Dengan fokus pada kemudahan penggunaan dan kinerja, aplikasi ini mengelola data 
 
 ## Petunjuk Instalasi
 
+1.  Clone Repositori ini
+    ```bash
+    git clone https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline.git
+    ```
+2. Modifikasi Project Structure, tambah semua file jar di folder lib ke modules pada Project Structure
+   <img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114504295/2e61a27d-5ea4-475c-bc90-ef3539a60054" height="380" width="700">
+   <p>Hasilnya akan menjadi seperti ini:</p>
+   <img src="https://github.com/RioOctaviannusLoka/UAS_PBO_Pengejar_Deadline/assets/114504295/1c5c543a-4877-498b-9998-6946508dc574" height="380" width="700">
+   <p>Tekan tombol 'Apply' Lalu tekan tombol 'OK'</p>
+3. Buka MySQL Workbench, lalu jalankan kueri pada file query.sql untuk membuat sebuah database baru bernama task_management disertai dengan tabel tabelnya
+   <br>
+4. Ubah user dan password pada file database.java di folder src\main\java\com\example\taskmanagement
+   ```bash
+   Connection connect = DriverManager.getConnection("jdbc:mysql://localhost/task_management",
+                    "root",""
+            );
+   ```
+   Pada contoh diatas, user adalah root, sedangkan password adalah kosong.
 <br>
 
 ## Cara Penggunaan
