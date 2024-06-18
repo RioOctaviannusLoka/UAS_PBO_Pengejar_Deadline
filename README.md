@@ -93,7 +93,7 @@ Link Video:
 <br>
 
 ## Deskripsi Projek
-Aplikasi dekstop ini merupakan aplikasi manajemen plan/tugas yang dirancang untuk membantu pengguna meningkatkan produktivitas mereka dengan memastikan bahwa pengguna dapat mengelola tugas-tugas harian dengan efisien dan mudah diakses. Aplikasi ini menyediakan antarmuka pengguna yang intuitif dan mudah digunakan, memungkinkan pengguna untuk mendaftar dan masuk ke akun mereka, serta mengelola tugas-tugas harian mereka dengan mudah. Aplikasi ini dikembangkan dalam bahasa Java serta menggunakan Javafx dalam mengembangkan tampilan aplikasi ini.
+Aplikasi dekstop ini merupakan aplikasi manajemen plan/tugas yang dirancang untuk membantu pengguna meningkatkan produktivitas mereka dengan memastikan bahwa pengguna dapat mengelola tugas-tugas harian dengan efisien dan mudah diakses. Aplikasi ini menyediakan antarmuka pengguna yang intuitif dan mudah digunakan, memungkinkan pengguna untuk mendaftar dan masuk ke akun mereka, serta mengelola tugas-tugas harian mereka dengan mudah. Aplikasi ini dikembangkan dalam bahasa Java serta menggunakan Framework Javafx dan aplikasi Scene Builder dalam mengembangkan tampilan aplikasi ini.
 
 Dengan fokus pada kemudahan penggunaan dan kinerja, aplikasi ini mengelola data tugas secara efisien tanpa menggunakan multithreading. Hal ini bertujuan untuk mengurangi kompleksitas dan menghindari risiko deadlock dan race condition yang sering terjadi pada aplikasi multithreading, sehingga aplikasi menjadi lebih stabil dan handal. Selain itu, aplikasi ini dirancang untuk kebutuhan yang tidak memerlukan operasi paralel atau pemrosesan tugas yang berat. Operasi CRUD pada tugas cukup ringan dan dapat ditangani dengan baik oleh thread tunggal. Supaya program dapat menjaga kinerjanya dengan baik, aplikasi ini sebisa mungkin mengurangi pengaksesan ke database yang dapat mengakibatkan delay pada aplikasi.
 
@@ -153,8 +153,8 @@ Dengan fokus pada kemudahan penggunaan dan kinerja, aplikasi ini mengelola data 
 
 <br>
 
-## Nama Anggota Kelompok
-- Rio Octaviannus Loka (221401032)
-- Frederick Godiva (221401038)
-- Rivaldo Dominggos Pardede (2214101060)
-- Dhea Tania Salsabilah Harahap (221401092)
+## Nama Anggota Kelompok dan Job Description
+- Rio Octaviannus Loka (221401032) - Membuat logika dari menu Home dan menu My Plans untuk Add dan Update data
+- Frederick Godiva (221401038) - Membuat logika dari menu Filter Plans
+- Rivaldo Dominggos Pardede (2214101060) - Membuat logika dari menu My Plans untuk tombol clear dan Delete data
+- Dhea Tania Salsabilah Harahap (221401092) - Membuat Tampilan UI aplikasi serta membuat Logika menu Login dan Register
