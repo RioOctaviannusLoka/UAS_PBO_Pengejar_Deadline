@@ -88,7 +88,7 @@
 
 ## Video Penjelasan
 
-Link Video:
+Link Video: <a href="https://youtu.be/2hLeGAkrDlk">Video</a>
 
 <br>
 
